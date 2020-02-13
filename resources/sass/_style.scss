@@ -13,11 +13,6 @@
     color: gold;
 }
 
-.post-img {
-    height: 300px;
-    width: auto;
-}
-
 .article-title {
     text-decoration: none;
     color: $red;
@@ -45,7 +40,7 @@
 }
 
 .hero-img {
-    background-image: linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('`images/hero_img.jpg');
+    background-image: linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('storage/images/hero_img.jpg');
 
     /* Set a specific height */
     height: 300px;
@@ -57,8 +52,53 @@
     position: relative;
 }
 
+.hero-body {
+    margin: 20px 0 20px 0;
+    height: 400px;
+    width: 800px;
+}
+.vh-85 {
+    height: 83vh;
+}
+.card-img {
+    height: 40%;
+    width: border-box;
+    box-sizing: border-box;
+}
+.services-title {
+    margin: 10px 5px 10px 5px;
+}
+
+.services-body {
+    text-align: center;
+    margin: 5px;
+}
+iframe {
+    margin: 0;
+    padding: 0;
+}
+footer {
+    height: 70px;
+    width: 100%;
+    background-color: goldenrod;
+    color: black;
+}
+
+
+
 @media only screen and (max-width: 400px) {
     .hero-img {
         height: 150px;
+    }
+
+    .article-img {
+        width: 100px;
+    }
+
+    .hero-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

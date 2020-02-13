@@ -7,7 +7,7 @@
             <div v-if="user">
             <textarea v-model="data.content"
                       rows="4"
-                      cols="50"
+                      cols="35"
                       placeholder="Add a comment"
                       class="border rounded m-2"
                       :class="[state === 'editing' ? 'h-24' : 'h-10']"

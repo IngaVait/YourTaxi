@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container vh-85 p-3">
         <div class="row justify-content-center">
             <div class="col-md-7">
                 {{--the place for article--}}
@@ -17,7 +17,7 @@
                     </div>
 
                     {{--    edit or delete post section        --}}
-                    @if((auth()->user()->id ?? null) === $article->user_id)
+                    @if((auth()->user()->type ?? null) === 'admin')
                         <div class="card-header d-flex justify-content-around align-items-center h5">
                             <a class="btn btn-secondary" href="{{ route('article.edit', $article) }}">edit</a>
                             <form method="POST" action="/article/{{ $article->id }}">

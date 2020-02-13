@@ -18,7 +18,7 @@
                       placeholder="Update comment"
                       class="rounded w-100"
                       rows="3"
-                      cols="50">
+                      cols="35">
             </textarea>
             <div class="p-1 d-flex justify-content-between">
                 <div>

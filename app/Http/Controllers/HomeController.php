@@ -26,7 +26,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $services = [
+            [
+                'url' => url('storage/images/images(3).jpg'),
+                'job' => 'Laiku!',
+                'description' => 'Visada Jums patogiu metu, Kviesk Taksi Greitai. Pasirink Tarifą Pats! Kaina Nuo 0,29 Eur/km. '
+            ],
+            [
+                'url' => url('storage/images/images(2).jpg'),
+                'job' => 'Jei skubate',
+                'description' => 'Atvykstame greičiau už vėją! Greitas Ir Patogus Taksi Iškvietimas. Skambink į eTAKSI.'
+            ], [
+                'url' => url('storage/images/images(3).jpg'),
+                'job' => 'Planuokite',
+                'description' => 'Gaukite nuolaidą ilgai kelionei. Pasirink Tarifą Pats! Kaina Nuo 0,29 Eur/km.'
+            ],
+        ];
+        return view('index', ['services' => $services]);
     }
 
     public function admin()

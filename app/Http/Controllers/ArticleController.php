@@ -16,9 +16,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::take(10)->latest()->get();
+        $articles = Article::take(5)->latest()->get();
         foreach ($articles as &$article){
-            $article['body'] = Str::limit($article['body'], 150);
+            $article['body'] = Str::limit($article['body'], 100);
             unset($article['image']);
         }
 

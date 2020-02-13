@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 Auth::routes();
 
-Route::get('/index', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/index', 'HomeController@index')->name('index.index');
 
 Route::get('/article', 'ArticleController@index')->name('article.index');
 Route::post('/article', 'ArticleController@store');

@@ -2142,7 +2142,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: {
@@ -2150,18 +2149,7 @@ __webpack_require__.r(__webpack_exports__);
       type: Object
     }
   },
-  data: function data() {
-    return {
-      url: '/user/' + this.user.id + '/article'
-    };
-  },
-  methods: {
-    banUser: function banUser() {//priskirti kita user.type
-    },
-    deleteUser: function deleteUser() {//istrinti useri
-    },
-    makeAdmin: function makeAdmin() {//priskirti admin role
-    }
+  data: function data() {//
   }
 });
 
@@ -37647,7 +37635,7 @@ var render = function() {
             }
           ],
           staticClass: "rounded w-100",
-          attrs: { placeholder: "Update comment", rows: "3", cols: "50" },
+          attrs: { placeholder: "Update comment", rows: "3", cols: "35" },
           domProps: { value: _vm.data.content },
           on: {
             input: function($event) {
@@ -37738,7 +37726,7 @@ var render = function() {
                 ],
                 staticClass: "border rounded m-2",
                 class: [_vm.state === "editing" ? "h-24" : "h-10"],
-                attrs: { rows: "4", cols: "50", placeholder: "Add a comment" },
+                attrs: { rows: "4", cols: "35", placeholder: "Add a comment" },
                 domProps: { value: _vm.data.content },
                 on: {
                   focus: _vm.startEditing,
@@ -37860,13 +37848,6 @@ var render = function() {
       _vm._v(" "),
       _c("p", { staticClass: "border-bottom" }, [
         _vm._v("This profile email: " + _vm._s(_vm.user.email))
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("user has written "),
-        _c("a", { attrs: { href: _vm.url } }, [
-          _vm._v(_vm._s(_vm.user.articles_count) + " articles")
-        ])
       ])
     ])
   ])
@@ -50101,8 +50082,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('comments-manager', __webpack_require__(/*! ./components/CommentManager.vue */ "./resources/js/components/CommentManager.vue")["default"]);
 Vue.component('commentItem', __webpack_require__(/*! ./components/CommentItem.vue */ "./resources/js/components/CommentItem.vue")["default"]);

@@ -11369,11 +11369,6 @@ a.text-dark:focus {
   color: gold;
 }
 
-.post-img {
-  height: 300px;
-  width: auto;
-}
-
 .article-title {
   text-decoration: none;
   color: #e3342f;
@@ -11401,8 +11396,8 @@ a.text-dark:focus {
 }
 
 .hero-img {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url("`images/hero_img.jpg");
-  background-image: linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("`images/hero_img.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url(/images/hero_img.jpg?a642f4ad9f1d289e9e30a48cb83a8087);
+  background-image: linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(/images/hero_img.jpg?a642f4ad9f1d289e9e30a48cb83a8087);
   /* Set a specific height */
   height: 300px;
   /* Position and center the image to scale nicely on all screens */
@@ -11412,9 +11407,62 @@ a.text-dark:focus {
   position: relative;
 }
 
+.hero-body {
+  margin: 20px 0 20px 0;
+  height: 400px;
+  width: 800px;
+}
+
+.vh-85 {
+  height: 83vh;
+}
+
+.card-img {
+  height: 40%;
+  width: border-box;
+  box-sizing: border-box;
+}
+
+.services-title {
+  margin: 10px 5px 10px 5px;
+}
+
+.services-body {
+  text-align: center;
+  margin: 5px;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  height: 70px;
+  width: 100%;
+  background-color: goldenrod;
+  color: black;
+}
+
 @media only screen and (max-width: 400px) {
   .hero-img {
     height: 150px;
+  }
+
+  .article-img {
+    width: 100px;
+  }
+
+  .hero-body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
   }
 }
 

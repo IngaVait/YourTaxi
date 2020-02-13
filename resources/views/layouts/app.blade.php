@@ -21,6 +21,8 @@
 </head>
 <body>
 <div id="app">
+    <header>
+
     <nav class="navbar navbar-expand-md">
         <div class="container">
 
@@ -50,16 +52,16 @@
                     {{--  only for admin part         --}}
                     @if(Auth::user()->isAdmin())
                         <li class="{{ Route::currentRouteName() == 'article.create' ? 'active' : '' }}">
-                            <a class="nav-link ml-4" href="{{ route('article.create') }}">Sukurti straipsnį</a>
+                            <a class="navbar-link ml-4" href="{{ route('article.create') }}">Sukurti straipsnį</a>
                         </li>
                         <li class="{{ Route::currentRouteName() == 'admin' ? 'active' : '' }}">
-                            <a href="{{ route('admin') }}" class="nav-link">Admin</a>
+                            <a href="{{ route('admin') }}" class="navbar-link">Admin</a>
                         </li>
                     @endif
                     {{--        end of admin        --}}
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <a id="navbarDropdown" class="navbar-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -81,9 +83,14 @@
             </ul>
         </div>
     </nav>
+    </header>
+
     <main class="">
         @yield('content')
     </main>
 </div>
+<footer class="d-flex justify-content-center align-items-center">
+    <p>&copy; Inga Vaitiekūnienė, all rights reserved</p>
+</footer>
 </body>
 </html>
