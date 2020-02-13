@@ -1,6 +1,5 @@
-// mano stilius
 
-
+// old laravel styling start
 html, body {
     background-color: #fff;
     color: #636b6f;
@@ -50,4 +49,36 @@ html, body {
 
 .m-b-md {
     margin-bottom: 30px;
+}
+// old laravel style end
+
+// my style
+.navbar-link {
+    text-decoration: none;
+    margin: 0 10px;
+    color: white;
+
+}
+
+.navbar-link:hover {
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: medium;
+    color: lightgray;
+}
+
+.post-img {
+    height: 300px;
+    width: auto;
+}
+
+.article-title {
+    text-decoration: none;
+    color: $red;
+}
+
+.article-title:hover {
+    text-decoration: none;
+    color: darkred;
+    transition: 0.5s;
 }
