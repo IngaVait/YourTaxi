@@ -16,12 +16,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $belekas = Article::take(10)->latest()->get();
-        foreach ($belekas as &$article){
+        $articles = Article::take(10)->latest()->get();
+        foreach ($articles as &$article){
             $article['body'] = Str::limit($article['body'], 150);
+            unset($article['image']);
         }
 
-        return view('article.index', ['articles' => $belekas]);
+        return view('article.index', ['articles' => $articles]);
     }
 
     /**
@@ -44,11 +45,19 @@ class ArticleController extends Controller
     {
         request()->validate([
            'title' => 'required',
-           'body' => 'required'
+           'body' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $article = new Article();
-
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/storage/uploads/articles');
+            $imagePath = $destinationPath . "/" . $name;
+            $image->move($destinationPath, $name);
+            $article->image = $name;
+        }
         $article->title = request('title');
         $article->body = request('body');
         $article->user_id = auth()->user()->id;

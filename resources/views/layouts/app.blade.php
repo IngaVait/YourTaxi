@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Your_Taxi!') }}</title>
+    <title>{{ config('app.name', 'Your_Taxi') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,17 +21,16 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-danger shadow-sm">
+    <nav class="navbar navbar-expand-md">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Full Talk') }}
-            </a>
 
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item d-flex">
-                    <a class="nav-link ml-4" href="{{ route('article.index') }}">All Articles</a>
-                    <a class="nav-link ml-4" href="{{ route('article.create') }}">Create new Article</a>
+                <li class="nav-item {{ Route::currentRouteName() == 'index' ? 'active' : '' }}">
+                    <a class="navbar-link ml-4" href="{{ route('index') }}">Titulinis</a>
+                </li>
+                <li class="{{ Route::currentRouteName() == 'article.index' ? 'active' : '' }}">
+                    <a class="navbar-link ml-4" href="{{ route('article.index') }}">Atsiliepimai</a>
                 </li>
             </ul>
 
@@ -39,18 +38,26 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item {{ Route::currentRouteName() == 'login' ? 'active' : '' }}">
+                        <a class="navbar-link" href="{{ route('login') }}">{{ __('Prisijungti') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <li class="nav-item {{ Route::currentRouteName() == 'register' ? 'active' : '' }}">
+                            <a class="navbar-link" href="{{ route('register') }}">{{ __('Registruotis') }}</a>
                         </li>
                     @endif
                 @else
+                    {{--  only for admin part         --}}
                     @if(Auth::user()->isAdmin())
-                        <a href="{{ route('admin') }}" class="nav-link">Admin</a>
+                        <li class="{{ Route::currentRouteName() == 'article.create' ? 'active' : '' }}">
+                            <a class="nav-link ml-4" href="{{ route('article.create') }}">Sukurti straipsnį</a>
+                        </li>
+                        <li class="{{ Route::currentRouteName() == 'admin' ? 'active' : '' }}">
+                            <a href="{{ route('admin') }}" class="nav-link">Admin</a>
+                        </li>
                     @endif
+                    {{--        end of admin        --}}
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -64,7 +71,8 @@
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                  style="display: none;">
                                 @csrf
                             </form>
                         </div>
@@ -73,8 +81,7 @@
             </ul>
         </div>
     </nav>
-
-    <main class="py-4">
+    <main class="">
         @yield('content')
     </main>
 </div>

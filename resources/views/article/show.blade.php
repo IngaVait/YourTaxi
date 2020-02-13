@@ -6,13 +6,12 @@
             <div class="col-md-7">
                 {{--the place for article--}}
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between">
+                    <div class="card-header d-flex justify-content-between mb-3">
                         <a class="article-title"
                            href="{{ route('article.show', ['article' => $article]) }}"> {{ $article->title }}</a>
-                        <a class="article-title"
-                           href="{{ route('article.author', ['user' => $article->author->id]) }}">{{ $article->author->name }}</a>
                         <span>{{ $article->created_at }}</span>
                     </div>
+                    <img class="article-img rounded m-auto " src="{{ asset('/storage/uploads/articles/' . $article->image)}}" alt="">
                     <div class="card-body">
                         {{ $article->body }}
                     </div>
@@ -27,8 +26,6 @@
                                 <button class="btn btn-secondary">delete</button>
                             </form>
                         </div>
-                    @else
-                        <p class="m-auto blockquote-footer">Si posta sukurete ne jus, todel negalite jo keisti</p>
                     @endif
                 </div>
                 {{--end of article --}}

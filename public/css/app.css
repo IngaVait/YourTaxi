@@ -11356,72 +11356,17 @@ a.text-dark:focus {
   }
 }
 
-html,
-body {
-  background-color: #fff;
-  color: #636b6f;
-  font-family: "Nunito", sans-serif;
-  font-weight: 200;
-  height: 100vh;
-  margin: 0;
-}
-
-.full-height {
-  height: 100vh;
-}
-
-.flex-center {
-  -webkit-box-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-}
-
-.position-ref {
-  position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-}
-
-.content {
-  text-align: center;
-}
-
-.title {
-  font-size: 84px;
-}
-
-.links > a {
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.m-b-md {
-  margin-bottom: 30px;
-}
-
 .navbar-link {
   text-decoration: none;
   margin: 0 10px;
+  font-size: medium;
   color: white;
 }
 
 .navbar-link:hover {
   text-decoration: none;
-  margin: 0 10px;
-  font-size: medium;
-  color: lightgray;
+  font-size: larger;
+  color: gold;
 }
 
 .post-img {
@@ -11439,6 +11384,38 @@ body {
   color: darkred;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.article-img {
+  width: 400px;
+  height: auto;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.navbar {
+  height: 70px;
+  background-color: black;
+}
+
+.hero-img {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url("`images/hero_img.jpg");
+  background-image: linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("`images/hero_img.jpg");
+  /* Set a specific height */
+  height: 300px;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media only screen and (max-width: 400px) {
+  .hero-img {
+    height: 150px;
+  }
 }
 
 .navbar-laravel {
