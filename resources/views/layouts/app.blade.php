@@ -21,17 +21,16 @@
 </head>
 <body>
 <div id="app">
-    <header>
 
     <nav class="navbar navbar-expand-md">
         <div class="container">
 
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ Route::currentRouteName() == 'index' ? 'active' : '' }}">
+                <li class="nav-item {{ Route::currentRouteName() == 'index' ? 'underline' : '' }}">
                     <a class="navbar-link ml-4" href="{{ route('index') }}">Titulinis</a>
                 </li>
-                <li class="{{ Route::currentRouteName() == 'article.index' ? 'active' : '' }}">
+                <li class="{{ Route::currentRouteName() == 'article.index' ? 'underline' : '' }}">
                     <a class="navbar-link ml-4" href="{{ route('article.index') }}">Atsiliepimai</a>
                 </li>
             </ul>
@@ -40,21 +39,21 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item {{ Route::currentRouteName() == 'login' ? 'active' : '' }}">
+                    <li class="nav-item {{ Route::currentRouteName() == 'login' ? 'underline' : '' }}">
                         <a class="navbar-link" href="{{ route('login') }}">{{ __('Prisijungti') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item {{ Route::currentRouteName() == 'register' ? 'active' : '' }}">
+                        <li class="nav-item {{ Route::currentRouteName() == 'register' ? 'underline' : '' }}">
                             <a class="navbar-link" href="{{ route('register') }}">{{ __('Registruotis') }}</a>
                         </li>
                     @endif
                 @else
                     {{--  only for admin part         --}}
                     @if(Auth::user()->isAdmin())
-                        <li class="{{ Route::currentRouteName() == 'article.create' ? 'active' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'article.create' ? 'underline' : '' }}">
                             <a class="navbar-link ml-4" href="{{ route('article.create') }}">Sukurti straipsnį</a>
                         </li>
-                        <li class="{{ Route::currentRouteName() == 'admin' ? 'active' : '' }}">
+                        <li class="{{ Route::currentRouteName() == 'admin' ? 'underline' : '' }}">
                             <a href="{{ route('admin') }}" class="navbar-link">Admin</a>
                         </li>
                     @endif
@@ -83,7 +82,6 @@
             </ul>
         </div>
     </nav>
-    </header>
 
     <main class="">
         @yield('content')

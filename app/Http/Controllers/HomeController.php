@@ -47,10 +47,7 @@ class HomeController extends Controller
 
     public function admin()
     {
-        $users = User::join('articles', 'users.id', '=', 'articles.user_id')
-            ->select(DB::raw('count(articles.id) as articles_count'), 'users.*')
-            ->groupBy('id')
-            ->get();
+        $users = User::take(20)->latest()->get();
         return view('admin.admin', ['users' => $users]);
     }
 }

@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container h-100 ">
-                    @if(auth()->user()->type === ADMIN_TYPE )
+                    @if(auth()->user()->type === 'admin' )
                         <form class="card w-75 h-100 d-flex flex-column justify-content-around" method="POST"
                               action="/article/{{ $article->id }}">
                             @csrf

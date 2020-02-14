@@ -29,5 +29,3 @@ Route::get('/user/{user}/article', 'UserController@index')->name('article.author
 Route::get('/admin', 'HomeController@admin')
     ->middleware('is_admin')
     ->name('admin');
-
-

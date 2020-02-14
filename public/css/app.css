@@ -11369,6 +11369,11 @@ a.text-dark:focus {
   color: gold;
 }
 
+.underline {
+  text-decoration: underline;
+  font-size: larger;
+}
+
 .article-title {
   text-decoration: none;
   color: #e3342f;
@@ -11464,10 +11469,5 @@ footer {
     -webkit-box-align: center;
             align-items: center;
   }
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

@@ -12,7 +12,6 @@ class User extends Authenticatable
 
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
-    const BANNED_TYPE = 'banned';
 
     /**
      * The attributes that are mass assignable.
@@ -54,11 +53,6 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->type === self::ADMIN_TYPE;
-    }
-
-    public function banned()
-    {
-        return $this->type === self::BANNED_TYPE;
     }
 
 }

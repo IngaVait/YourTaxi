@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container vh-85 p-3">
+    <div class="container vh-100 p-3">
         <div class="row justify-content-center">
             <div class="col-md-7">
                 {{--the place for article--}}
@@ -11,7 +11,8 @@
                            href="{{ route('article.show', ['article' => $article]) }}"> {{ $article->title }}</a>
                         <span>{{ $article->created_at }}</span>
                     </div>
-                    <img class="article-img rounded m-auto " src="{{ asset('/storage/uploads/articles/' . $article->image)}}" alt="">
+                    <img class="article-img rounded m-auto "
+                         src="{{ asset('/storage/uploads/articles/' . $article->image)}}" alt="">
                     <div class="card-body">
                         {{ $article->body }}
                     </div>

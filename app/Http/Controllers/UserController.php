@@ -8,23 +8,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+//    skirta tam atvejui, jei bus keli administratoriai, tada galima rodyti kas yra straipsnio autorius, ir filtruoti straipsnius pagal tai.
+
     public function index(User $user)
     {
         $articles = Article::where('user_id', $user->id)->get();
 
         return view('user.article', ['articles' => $articles]);
-    }
-
-    public function profile(User $user)
-    {
-        $user = User::where('user_id', $user->id)->get();
-
-        // return view when it's ready
-    }
-
-    public function type()
-    {
-        //give type
     }
 
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container vh-85">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container h-100 ">
@@ -16,7 +16,6 @@
                                 <p class="alert-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-
                             <div class="card-body">
                                 <label class="col" for="body">Jūsų straipsnis:</label>
                                 <textarea class="col" rows="8" name="body">{{ old('body') }} </textarea>
